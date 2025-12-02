@@ -1,20 +1,19 @@
 Package: ditwahLandslide
 Title: Early Warning Information on Landslides in Sri Lanka During the Ditwah Storm.
 Version: 0.0.1
-Authors@R: 
-     person("Thiyanga S.", "Talagala", , "ttalagala@sjp.ac.lk", role = c("aut", "cre"), comment=c(ORCID = "0000-0002-0656-9789")),
+Authors@R: c(
+     person("Thiyanga S.", "Talagala", email="ttalagala@sjp.ac.lk", role = c("aut", "cre"), comment=c(ORCID = "0000-0002-0656-9789")),
      person("Y. M. Amali P.", " Rajapaksha", role = c("aut")),
      person("Geethma R.", "Jayasinghe", role = c("aut")),
-     person("N. G. S.", "Minimuthu", role = c("aut")),
+     person("N. G. Shehara", "Minimuthu", role = c("aut")),
      person("Y. G. D. M. Savindya", "Thathsarani", role = c("aut"))
+     )
 Description: This package provides curated early warning data on landslides in Sri Lanka during the Ditwah storm. 
-             It includes structured, machine-readable tidy dataset. 
+             It includes structured, machine-readable tidy dataset. This is developed for education and research purposes.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-Imports:
-    tibble
 Depends: 
     R (>= 4.1.0)
 LazyData: true

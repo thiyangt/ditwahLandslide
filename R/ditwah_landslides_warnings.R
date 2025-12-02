@@ -18,4 +18,5 @@
 #'   \item{State}{\code{dbl}. Direction and magnitude of the landslide (1-shifted one level up, 2-shifted two levels up, -1-shifted one level down, -2-shifted two levels down).}
 #' }
 #'
-#' @source Based on land slides early warning pdf reports published by Disaster Management Centre, Sri Lanka
+#' @source Based on land slides early warning pdf reports published by Disaster Management Centre, Sri Lanka. The data from PDF files were cleaned and processes by the package authors.
+"ditwah_landslides_warnings"
