@@ -4,6 +4,7 @@ library(readxl)
 library(purrr)
 library(dplyr)
 library(here)
+library(lubridate)
 
 path <- here("data-raw", "dataxl")
 
@@ -29,8 +30,25 @@ f15 <- read_excel(files[15])
 f16 <- read_excel(files[16])
 f17 <- read_excel(files[17])
 
-library(lubridate)
-f1$Report_Date <- dmy(f1$Report_Date)
+
+glimpse(f1)
+glimpse(f2)
+glimpse(f3)
+glimpse(f4)
+glimpse(f5)
+glimpse(f6)
+glimpse(f7)
+glimpse(f8)
+glimpse(f9)
+glimpse(f10)
+glimpse(f11)
+glimpse(f12)
+glimpse(f13)
+glimpse(f14)
+glimpse(f15)
+glimpse(f16)
+glimpse(f17)
+
 
 ditwah_landslides_warnings <- bind_rows(f1, f2)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f3)
@@ -39,7 +57,21 @@ ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f5)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f6)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f7)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f8)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f9)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f10)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f11)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f12)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f13)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f14)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f15)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f16)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f17)
+
+ditwah_landslides_warnings$Report_Time <- format(ditwah_landslides_warnings$Report_Time, "%H:%M")
+ditwah_landslides_warnings$Valid_From_Time <- format(ditwah_landslides_warnings$Valid_From_Time, "%H:%M")
+ditwah_landslides_warnings$Valid_To_Time<- format(ditwah_landslides_warnings$Valid_To_Time, "%H:%M")
 
 
+usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)
 
-usethis::use_data(DATASET, overwrite = TRUE)
+
