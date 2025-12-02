@@ -19,6 +19,7 @@ A data frame with the following variables:
 \item{Location}{\code{chr}. Specific locality, town, or area within the district affected by the warning.}
 \item{Level}{\code{dbl}. Landslide early warning level (1 = Level 1, 2 = Level 2, 3 = Level 3). Represents the severity of the situation.}
 \item{State}{\code{dbl}. Direction and magnitude of the landslide (1-shifted one level up, 2-shifted two levels up, -1-shifted one level down, -2-shifted two levels down).}
+\item{Province}{Province}
 }
 }
 \source{

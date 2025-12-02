@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ditwahLandslide
+# `ditwahLandslide`
 
 This package provides curated early-warning data on landslides in Sri
 Lanka during the Ditwah storm, scraped from the Disaster Management
@@ -44,11 +44,11 @@ head(ditwah_landslides_warnings)
 #> 4      2025-11-20           16:00    2025-11-21         16:00  Badulla
 #> 5      2025-11-20           16:00    2025-11-21         16:00  Badulla
 #> 6      2025-11-20           16:00    2025-11-21         16:00 Kalutara
-#>         Location Level State
-#> 1    Bandarawela     1    NA
-#> 2      Haputhale     1    NA
-#> 3 Uva Paranagama     1    NA
-#> 4    Kandaketiya     1    NA
-#> 5    Haldummulla     1    -1
-#> 6      Mathugama     1    -1
+#>         Location Level State Province
+#> 1    Bandarawela     1    NA      Uva
+#> 2      Haputhale     1    NA      Uva
+#> 3 Uva Paranagama     1    NA      Uva
+#> 4    Kandaketiya     1    NA      Uva
+#> 5    Haldummulla     1    -1      Uva
+#> 6      Mathugama     1    -1  Western
 ```

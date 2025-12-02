@@ -72,6 +72,98 @@ ditwah_landslides_warnings$Valid_From_Time <- format(ditwah_landslides_warnings$
 ditwah_landslides_warnings$Valid_To_Time<- format(ditwah_landslides_warnings$Valid_To_Time, "%H:%M")
 
 
-usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)
+#usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)
 
+
+library(dplyr)
+library(stringr)
+
+# Create a lookup table of correct district names
+district_lookup <- c(
+  "colombo"      = "Colombo",
+  "gampaha"      = "Gampaha",
+  "kalutara"     = "Kalutara",
+  "kaluthara"    = "Kalutara",
+
+  "kandy"        = "Kandy",
+  "matale"       = "Matale",
+  "nuwara eliya" = "Nuwara Eliya",
+
+  "galle"        = "Galle",
+  "matara"       = "Matara",
+  "hambantota"   = "Hambantota",
+
+  "kurunegala"   = "Kurunegala",
+
+  "kegalle"      = "Kegalle",
+  "ratnapura"    = "Ratnapura",
+  "rathnapura"   = "Ratnapura",
+
+  "badulla"      = "Badulla",
+
+  "moneragala"   = "Monaragala",
+  "monaragala"   = "Monaragala",
+  "monaragla"    = "Monaragala"
+)
+
+# Function to standardize district names
+clean_district <- function(x) {
+  x_clean <- tolower(str_trim(x))
+  out <- district_lookup[x_clean]
+  ifelse(is.na(out), str_to_title(x_clean), out)
+}
+
+# Example usage:
+districts <- c("colombo", "Colombo", "Kaluthara", "Monaragla", "kegalle", "KANDY")
+
+ditwah_landslides_warnings$District <- clean_district(ditwah_landslides_warnings$District)
+
+
+province_lookup <- c(
+  # Western
+  "colombo"   = "Western",
+  "gampaha"   = "Western",
+  "kalutara"  = "Western",
+  "kaluthara" = "Western",
+
+  # Central
+  "kandy"        = "Central",
+  "matale"       = "Central",
+  "nuwara eliya" = "Central",
+
+  # Southern
+  "galle"      = "Southern",
+  "matara"     = "Southern",
+  "hambantota" = "Southern",
+
+  # Sabaragamuwa
+  "kegalle"     = "Sabaragamuwa",
+  "kegalle"     = "Sabaragamuwa",
+  "ratnapura"   = "Sabaragamuwa",
+  "rathnapura"  = "Sabaragamuwa",
+
+  # Uva
+  "badulla"      = "Uva",
+  "moneragala"   = "Uva",
+  "monaragala"   = "Uva",
+  "monaragla"    = "Uva",
+
+  # North Western
+  "kurunegala"   = "North Western"
+)
+add_province <- function(x) {
+  x_clean <- tolower(trimws(x))
+  x_clean <- str_replace_all(x_clean, "\\s+", " ")
+  # If district not in lookup, return Title Case version
+  out <- province_lookup[x_clean]
+  ifelse(is.na(out), NA, out)
+}
+
+ditwah_landslides_warnings <- ditwah_landslides_warnings |>
+  mutate(
+    Province = add_province(District)
+  )
+
+
+usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)
 

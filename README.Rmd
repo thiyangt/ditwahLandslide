@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ditwahLandslide
+# `ditwahLandslide`
 
 This package provides curated early-warning data on landslides in Sri Lanka during the Ditwah storm, scraped from the Disaster Management Centre, Sri Lanka. It includes a structured, machine-readable, analysis-ready tidy dataset designed to support statistical workflows, education, and research.
 
