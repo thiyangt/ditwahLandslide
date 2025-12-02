@@ -1,7 +1,13 @@
-^ditwahLandslide\.Rproj$
+^_pkgdown\.yml$
+^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
+^logo$
 ^README\.Rmd$
-^_pkgdown\.yml$
+^README-.*\.png$
+^\.travis\.yml$
+^revdep$
 ^docs$
-^pkgdown$
+^data_pretrained_fforms$
+^codecov\.yml$
+^cran-comments\.md$
