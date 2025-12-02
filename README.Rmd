@@ -20,7 +20,7 @@ This package provides curated early-warning data on landslides in Sri Lanka duri
 <!-- badges: start -->
 <!-- badges: end -->
 
-![](data-raw/flyr.png)
+![](https://github.com/thiyangt/ditwahLandslide/blob/main/data-raw/flyr.png?raw=true)
 
 ## Installation
 

@@ -13,7 +13,7 @@ education, and research.
 
 <!-- badges: end -->
 
-![](data-raw/flyr.png)
+![](https://github.com/thiyangt/ditwahLandslide/blob/main/data-raw/flyr.png?raw=true)
 
 ## Installation
 
