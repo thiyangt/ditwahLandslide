@@ -31,7 +31,7 @@ You can install the development version of ditwahLandslide from [GitHub](https:/
 pak::pak("thiyangt/ditwahLandslide")
 ```
 
-## Example
+## Examples
 
 
 
@@ -40,3 +40,7 @@ library(ditwahLandslide)
 head(ditwah_landslides_warnings)
 ```
 
+
+```{r, out.width="100%", eval=FALSE}
+viz_landslide_warnings_from_to(province = "Uva", district = "Badulla", interactivity=FALSE)
+```
