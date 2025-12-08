@@ -1,6 +1,6 @@
 Package: ditwahLandslide
 Title: Early Warning Information on Landslides in Sri Lanka During the Ditwah Storm
-Version: 0.0.1
+Version: 1.0.0
 Authors@R: c(
      person("Thiyanga S.", "Talagala", email="ttalagala@sjp.ac.lk", role = c("aut", "cre"), comment=c(ORCID = "0000-0002-0656-9789")),
      person("Geethma R.", "Jayasinghe", role = c("aut")),

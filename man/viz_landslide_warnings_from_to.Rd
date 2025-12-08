@@ -30,5 +30,5 @@ Heatmap plot of landslide warnings
 Temporal progression of landslide warning state
 }
 \author{
-Geethma R. Jayasinghe, Y. M. Amali P. Rajapaksha, Thiyanga S. Talagala
+Thiyanga S. Talagala, Geethma R. Jayasinghe, Y. M. Amali P. Rajapaksha
 }

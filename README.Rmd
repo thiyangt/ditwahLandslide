@@ -41,6 +41,6 @@ head(ditwah_landslides_warnings)
 ```
 
 
-```{r, fig.width=20}
-viz_landslide_warnings_from_to(province = "Central", district = "Kandy", interactivity=FALSE)
+```{r, out.height="100%"}
+viz_landslide_warnings_from_to(province = "", district = "Monaragala", interactivity=FALSE)
 ```
