@@ -134,9 +134,9 @@ viz_landslide_warnings_from_to <- function(district,
     )
 
   if(interactivity==TRUE){
-    staticplot
-  } else {
     plotly::ggplotly(staticplot)
+  } else {
+    staticplot
   }
 }
 #'@example
