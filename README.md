@@ -45,5 +45,7 @@ head(ditwah_landslides_warnings)
 ```
 
 ``` r
-viz_landslide_warnings_from_to(province = "Uva", district = "Badulla", interactivity=FALSE)
+viz_landslide_warnings_from_to(province = "Central", district = "Kandy", interactivity=FALSE)
 ```
+
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />

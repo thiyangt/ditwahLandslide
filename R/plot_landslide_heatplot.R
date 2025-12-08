@@ -5,6 +5,7 @@
 #'@param province Province name
 #'@param interactivity if TRUE interactive plot will be generated, if FALSE static plot will be generated
 #'@param data name of the dataset, by default ditwah_landslides_warnings
+#'@param ang angle of the x-axis lables
 #'@return Heatmap plot of landslide warnings
 #'@importFrom dplyr mutate
 #'@importFrom stringr str_squish
@@ -26,12 +27,12 @@
 #'@importFrom ggplot2 labs
 #'@importFrom ggplot2 scale_x_datetime
 #'@importFrom ggplot2 theme
-#'@author Geethma R. Jayasinghe, Y. M. Amali P. Rajapaksha, Thiyanga S. Talagala
+#'@author Thiyanga S. Talagala, Geethma R. Jayasinghe, Y. M. Amali P. Rajapaksha
 #'@export
 viz_landslide_warnings_from_to <- function(district,
                                    province,
                                    interactivity= TRUE,
-                                   data = ditwah_landslides_warnings){
+                                   data = ditwah_landslides_warnings,ang=90){
 
   province_districts = list(
     "Central" = c("Kandy", "Matale", "Nuwara Eliya"),
@@ -124,11 +125,11 @@ viz_landslide_warnings_from_to <- function(district,
       date_labels = "%b %d %H:%M",
       date_breaks = "8 hours"
     ) +
-    # theme_minimal() +
     theme(
-      axis.text.x = element_text(angle = 90, hjust = 1),
+      legend.position="bottom",
+      axis.text.x = element_text(angle = ang, hjust = 1),
       axis.ticks = element_blank(),
-      panel.grid = element_blank(),
+     # panel.grid = element_blank(),
       panel.border = element_blank()
     )
 
@@ -139,4 +140,4 @@ viz_landslide_warnings_from_to <- function(district,
   }
 }
 #'@example
-#'
+#'viz_landslide_warnings_from_to(province = "Central", district = "Kandy", interactivity=FALSE)

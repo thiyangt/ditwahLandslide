@@ -8,7 +8,8 @@ viz_landslide_warnings_from_to(
   district,
   province,
   interactivity = TRUE,
-  data = ditwah_landslides_warnings
+  data = ditwah_landslides_warnings,
+  ang = 90
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ viz_landslide_warnings_from_to(
 \item{interactivity}{if TRUE interactive plot will be generated, if FALSE static plot will be generated}
 
 \item{data}{name of the dataset, by default ditwah_landslides_warnings}
+
+\item{ang}{angle of the x-axis lables}
 }
 \value{
 Heatmap plot of landslide warnings
