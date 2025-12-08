@@ -124,13 +124,13 @@ viz_landslide_warnings_from_to <- function(district,
     scale_x_datetime(
       date_labels = "%b %d %H:%M",
       date_breaks = "8 hours"
-    ) +
-    theme(
+    ) + theme(
       axis.text.x = element_text(angle = ang, hjust = 1),
-      axis.ticks = element_blank(),
+     # axis.ticks = element_blank(),
+     # panel.grid.major = element_line(colour = "black"),
      # panel.grid = element_blank(),
-      panel.border = element_blank(),
-     legend.position="bottom"
+    #  panel.border = element_blank(),
+      legend.position = "bottom"
     )
 
   if(interactivity==TRUE){

@@ -31,7 +31,7 @@ You can install the development version of ditwahLandslide from [GitHub](https:/
 pak::pak("thiyangt/ditwahLandslide")
 ```
 
-## Examples
+## Use cases
 
 
 
