@@ -11,7 +11,7 @@ path <- here("data-raw", "dataxl")
 # List all Excel files
 files <- list.files(path, pattern = "\\.xlsx?$", full.names = TRUE)
 files
-length(files)
+length(files) # 32 by 18 Dec 2025
 f1 <- read_excel(files[1])
 f2 <- read_excel(files[2])
 f3 <- read_excel(files[3])
@@ -29,6 +29,21 @@ f14 <- read_excel(files[14])
 f15 <- read_excel(files[15])
 f16 <- read_excel(files[16])
 f17 <- read_excel(files[17])
+f18 <- read_excel(files[18])
+f19 <- read_excel(files[19])
+f20 <- read_excel(files[20])
+f21 <- read_excel(files[21])
+f22 <- read_excel(files[22])
+f23 <- read_excel(files[23])
+f24 <- read_excel(files[24])
+f25 <- read_excel(files[25])
+f26 <- read_excel(files[26])
+f27 <- read_excel(files[27])
+f28 <- read_excel(files[28])
+f29 <- read_excel(files[29])
+f30 <- read_excel(files[30])
+f31 <- read_excel(files[31])
+f32 <- read_excel(files[32])
 
 
 glimpse(f1)
@@ -48,6 +63,21 @@ glimpse(f14)
 glimpse(f15)
 glimpse(f16)
 glimpse(f17)
+glimpse(f18)
+glimpse(f19)
+glimpse(f20)
+glimpse(f21)
+glimpse(f22)
+glimpse(f23)
+glimpse(f24)
+glimpse(f25)
+glimpse(f26)
+glimpse(f27)
+glimpse(f28)
+glimpse(f29)
+glimpse(f30)
+glimpse(f31)
+glimpse(f32)
 
 
 ditwah_landslides_warnings <- bind_rows(f1, f2)
@@ -66,6 +96,21 @@ ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f14)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f15)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f16)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f17)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f18)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f19)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f20)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f21)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f22)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f23)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f24)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f25)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f26)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f27)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f28)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f29)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f30)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f31)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f32)
 
 ditwah_landslides_warnings$Report_Time <- format(ditwah_landslides_warnings$Report_Time, "%H:%M")
 ditwah_landslides_warnings$Valid_From_Time <- format(ditwah_landslides_warnings$Valid_From_Time, "%H:%M")
@@ -165,5 +210,34 @@ ditwah_landslides_warnings <- ditwah_landslides_warnings |>
   )
 
 
-usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)
+#usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)
 
+## Fix location names
+sort(unique(ditwah_landslides_warnings$Location))
+
+# "Aranayaka"      "Aranayake"
+# "Bulathsinghala"      "Bulathsinhala"
+# "Dehiowita"           "Dehowita"
+# "Hali Ela"            "Hali_Ela"
+# "Kirinda Puhulwella"  "Kirinda_Puhulwella"
+# "Kothmale East"      "Kotmale East"
+# "Kothmale West"    "Kotmale West"
+# "Nildandahinna"  "Nidandahinna"
+
+library(dplyr)
+
+ditwah_landslides_warnings <- ditwah_landslides_warnings |>
+  mutate(
+    Location = recode(
+      Location,
+      "Aranayake"            = "Aranayaka",
+      "Bulathsinhala"        = "Bulathsinghala",
+      "Dehowita"             = "Dehiowita",
+      "Hali_Ela"             = "Hali Ela",
+      "Kirinda_Puhulwella"   = "Kirinda Puhulwella",
+      "Kotmale East"         = "Kothmale East",
+      "Kotmale West"         = "Kothmale West",
+      "Nidandahinna"         = "Nildandahinna"
+    )
+  )
+usethis::use_data(ditwah_landslides_warnings, overwrite = TRUE)

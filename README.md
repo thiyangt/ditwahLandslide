@@ -25,7 +25,7 @@ You can install the development version of ditwahLandslide from
 pak::pak("thiyangt/ditwahLandslide")
 ```
 
-## Use cases
+## Data Visualisation
 
 ``` r
 library(ditwahLandslide)
