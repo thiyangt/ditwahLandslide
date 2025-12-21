@@ -5,21 +5,21 @@
 \title{Heatmap of Transitions Between Landslide Warning Levels}
 \usage{
 viz_landslide_warnings_from_to(
-  district,
-  province,
+  data,
+  district = NULL,
+  province = NULL,
   interactivity = TRUE,
-  data = ditwah_landslides_warnings,
   ang = 90
 )
 }
 \arguments{
-\item{district}{District name}
+\item{data}{name of the dataset, by default ditwah_landslides_warnings}
 
-\item{province}{Province name}
+\item{district}{District name or All, if no district put NULL}
+
+\item{province}{Province name or All, if no province put NULL}
 
 \item{interactivity}{if TRUE interactive plot will be generated, if FALSE static plot will be generated}
-
-\item{data}{name of the dataset, by default ditwah_landslides_warnings}
 
 \item{ang}{angle of the x-axis lables}
 }

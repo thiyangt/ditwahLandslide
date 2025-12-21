@@ -42,5 +42,5 @@ head(ditwah_landslides_warnings)
 
 
 ```{r, out.height="100%"}
-viz_landslide_warnings_from_to(province = "", district = "Monaragala", interactivity=FALSE)
+viz_landslide_warnings_from_to(data=ditwah_landslides_warnings, province = "Uva", district = "All", interactivity=FALSE)
 ```
