@@ -57,7 +57,7 @@ ditwah_landslides_warnings2 <- ditwah_landslides_warnings %>%
 # UI
 # -------------------------------
 ui <- dashboardPage(
-  dashboardHeader(title = "Ditwah Landslides Early Warnings Visualisation Dashboard", titleWidth = 500),
+  dashboardHeader(title = "Ditwah Landslides Early Warnings Tracker", titleWidth = 500),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("chart-bar")),
