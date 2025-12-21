@@ -57,7 +57,7 @@ ditwah_landslides_warnings2 <- ditwah_landslides_warnings %>%
 # UI
 # -------------------------------
 ui <- dashboardPage(
-  dashboardHeader(title = "DITWAH Landslide Dashboard"),
+  dashboardHeader(title = "Ditwah Landslides Early Warnings Visualisation Dashboard", titleWidth = 500),
   dashboardSidebar(
     sidebarMenu(
       menuItem("Dashboard", tabName = "dashboard", icon = icon("chart-bar")),
@@ -67,7 +67,6 @@ ui <- dashboardPage(
         choices = names(province_districts),
         selected = names(province_districts)[1]  # default to first province
       ),
-
       # District choices will be updated dynamically
       selectInput(
         "district",
@@ -81,7 +80,7 @@ ui <- dashboardPage(
     tabItems(
       tabItem(tabName = "dashboard",
               box(title = "Landslide Warnings Heatmap", status = "primary", solidHeader = TRUE,
-                  width = 12, plotOutput("heatmap", height = "600px")
+                  width = 12, plotOutput("heatmap", height = "700px")
               )
       )
     )
@@ -145,7 +144,8 @@ server <- function(input, output, session) {
         scale_x_datetime(date_labels = "%b %d %H:%M", date_breaks = "8 hours") +
         theme_minimal() +
         theme(
-          axis.text.x = element_text(angle = 45, hjust = 1),
+          axis.text.y = element_text(size = 14),
+          axis.text.x = element_text(angle = 90, hjust = 1, size = 14),
           axis.ticks = element_blank(),
           panel.grid = element_blank(),
           panel.border = element_blank()
