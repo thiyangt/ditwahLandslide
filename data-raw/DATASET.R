@@ -11,7 +11,7 @@ path <- here("data-raw", "dataxl")
 # List all Excel files
 files <- list.files(path, pattern = "\\.xlsx?$", full.names = TRUE)
 files
-length(files) # 32 by 18 Dec 2025
+length(files) # 32 by 18 Dec 2025 #40 by 26 Dec 2025
 f1 <- read_excel(files[1])
 f2 <- read_excel(files[2])
 f3 <- read_excel(files[3])
@@ -44,7 +44,14 @@ f29 <- read_excel(files[29])
 f30 <- read_excel(files[30])
 f31 <- read_excel(files[31])
 f32 <- read_excel(files[32])
-
+f33 <- read_excel(files[33])
+f34 <- read_excel(files[34])
+f35 <- read_excel(files[35])
+f36 <- read_excel(files[36])
+f37 <- read_excel(files[37])
+f38 <- read_excel(files[38])
+f39 <- read_excel(files[39])
+f40 <- read_excel(files[40])
 
 glimpse(f1)
 glimpse(f2)
@@ -78,7 +85,14 @@ glimpse(f29)
 glimpse(f30)
 glimpse(f31)
 glimpse(f32)
-
+glimpse(f33)
+glimpse(f34)
+glimpse(f35)
+glimpse(f36)
+glimpse(f37)
+glimpse(f38)
+glimpse(f39)
+glimpse(f40)
 
 ditwah_landslides_warnings <- bind_rows(f1, f2)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f3)
@@ -111,6 +125,21 @@ ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f29)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f30)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f31)
 ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f32)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f33)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f34)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f35)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f36)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f37)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f38)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f39)
+ditwah_landslides_warnings <- bind_rows(ditwah_landslides_warnings, f40)
+
+
+
+
+
+
+
 
 ditwah_landslides_warnings$Report_Time <- format(ditwah_landslides_warnings$Report_Time, "%H:%M")
 ditwah_landslides_warnings$Valid_From_Time <- format(ditwah_landslides_warnings$Valid_From_Time, "%H:%M")
